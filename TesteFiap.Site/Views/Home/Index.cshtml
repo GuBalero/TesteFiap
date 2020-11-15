@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Fire SkateShop</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='~/Style/site.css')>
+</head>
+<body>
+    <header>
+        <div class="div-logo">
+            <img src="~/Style/logo.png" class="logo" />
+            <h1>FIRE SKATESHOP</h1>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="#produtos">PRODUTOS</a></li>
+                <li class="btn"><a href="/Adm">ENTRAR</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+
+        <div class="home" id="home">
+            <h1>A MAIOR LOJA DE SKATE DO BRASIL</h1>
+            <p>
+                Aqui você encontra todos os produtos das melhores marcas
+                para ficar no estilo e ter a melhor vivência no skate
+            </p>
+        </div>
+
+        <div class="marcas" id="sobre">
+            <img src="~/Style/nike.png" />
+            <img src="~/Style/adidas.png" />
+            <img src="~/Style/converse.png" />
+            <img src="~/Style/nb.png" />
+            <img src="~/Style/dc.png" />
+        </div>
+
+        <div class="sobre">
+            <h1>O lugar ideal para quem busca qualidade</h1>
+
+            <p>
+                Fundada há 17 anos, a Fire SkateShop é uma rede de lojas que tem um direcionamento
+                voltado exclusivamente para o skate, idealizada e administrada pelos skatistas profissionais
+                Cezar Gordo, Rodrigo TX e Marcus Cida.
+            </p>
+
+            <p>
+                Atualmente, somos uma rede de lojas que entrega o melhor serviço possível para pessoas
+                que amam, praticam, se identificam e vivem do skate, assim como a gente.
+            </p>
+        </div>
+
+        <div class="produtos" id="produtos">
+
+            <div class="contato">
+                <h1>Desejo receber as melhores ofertas:</h1>
+                <form action="/cliente/cadastro" method="post">
+                    <input type="text" name="nome" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit" class="btn"><a>ENVIAR</a></button>
+                </form>
+            </div>
+
+            <div class="itens">
+
+                <div class="item">
+                    <h1>CAMISA</h1>
+                    <img src="~/Style/nike.png" />
+                    <div class="preco">
+                        <button class="btn"><a>R$50,00</a></button>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h1>CALÇA</h1>
+                    <img src="~/Style/dc.png" />
+                    <div class="preco">
+                        <button class="btn"><a>R$170,00</a></button>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h1>TÊNIS</h1>
+                    <img src="~/Style/nb.png" />
+                    <div class="preco">
+                        <button class="btn"><a>R$350,00</a></button>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h1>BONÉ</h1>
+                    <img src="~/Style/adidas.png" />
+                    <div class="preco">
+                        <button class="btn"><a>R$90,00</a></button>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h1>MEIA</h1>
+                    <img src="~/Style/converse.png" />
+                    <div class="preco">
+                        <button class="btn"><a>R$15,00</a></button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        Desenvolvido por Gustavo Balero
+    </footer>
+</body>
+</html>

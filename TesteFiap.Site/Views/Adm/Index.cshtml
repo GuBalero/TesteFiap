@@ -1,0 +1,55 @@
+﻿@using TesteFiap.Site.Models
+@model List<ClienteModel>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Fire SkateShop</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='~/Style/adm.css' )>
+</head>
+<body>
+    <a href="/Home">
+        <button class="btn back">VOLTAR</button>
+    </a>
+    <div class="container">
+        <div class="box">
+            <h1>Clientes</h1>
+            <form action="/Cliente/Search" method="get">
+                <input name="search" type="text" placeholder="Pesquisar por Nome ou Email" value="@ViewBag.Busca"/>
+                <button type="submit" class="btn search">PESQUISAR</button>
+            </form>
+
+            <div class="div-table">
+                <table class="table-fill">
+                    <thead>
+                        <tr>
+                            <th class="text-left">NOME</th>
+                            <th class="text-left">EMAIL</th>
+                            <th class="text-center">AÇÃO</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+
+                        @foreach (var cliente in Model)
+                        {
+                            <tr>
+
+                                <td class="text-left">@cliente.nome</td>
+                                <td class="text-left">@cliente.email</td>
+                                <td class="text-center">
+                                    <a href="/Cliente/Delete/@cliente.id"><button class="btn delete">DELETAR</button></a>
+                                </td>
+
+                            </tr>
+
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
