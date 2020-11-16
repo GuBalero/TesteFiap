@@ -98,15 +98,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Style\adidas.png" />
-    <Content Include="Style\adm.css" />
-    <Content Include="Style\background.jpg" />
-    <Content Include="Style\converse.png" />
-    <Content Include="Style\dc.png" />
-    <Content Include="Style\logo.png" />
-    <Content Include="Style\nb.png" />
-    <Content Include="Style\nike.png" />
-    <Content Include="Style\site.css" />
+    <Content Include="Content\adidas.png" />
+    <Content Include="Content\adm.css" />
+    <Content Include="Content\background.jpg" />
+    <Content Include="Content\converse.png" />
+    <Content Include="Content\dc.png" />
+    <Content Include="Content\logo.png" />
+    <Content Include="Content\nb.png" />
+    <Content Include="Content\nike.png" />
+    <Content Include="Content\site.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

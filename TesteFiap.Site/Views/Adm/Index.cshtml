@@ -1,12 +1,37 @@
 ﻿@using TesteFiap.Site.Models
 @model List<ClienteModel>
+
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Fire SkateShop</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='~/Style/adm.css' )>
+    <link rel='stylesheet' type='text/css' media='screen' href='~/Content/adm.css' )>
+
+    <script>
+
+        var idDelete = -1;
+
+        function Fechar() {
+            document.getElementById("modal").style.opacity = "0";
+            setTimeout(function () {
+                window.location.href = "/Adm";
+            }, 300);
+
+        }
+
+        function Abrir(ID) {
+            document.getElementById("modal").style.opacity = "1";
+            document.getElementById("modal").style.left = "0";
+            idDelete = ID;
+        }
+
+        function Delete() {
+            window.location.href = "/Cliente/Delete/" + idDelete;
+        }
+    </script>
+
 </head>
 <body>
     <a href="/Home">
@@ -16,7 +41,8 @@
         <div class="box">
             <h1>Clientes</h1>
             <form action="/Cliente/Search" method="get">
-                <input name="search" type="text" placeholder="Pesquisar por Nome ou Email" value="@ViewBag.Busca"/>
+                <input name="search" type="text" placeholder="Pesquisar por Nome ou Email" value="@ViewBag.Busca" autocomplete="off" />
+                <a href="/Adm"><p>X</p></a>
                 <button type="submit" class="btn search">PESQUISAR</button>
             </form>
 
@@ -38,7 +64,7 @@
                                 <td class="text-left">@cliente.nome</td>
                                 <td class="text-left">@cliente.email</td>
                                 <td class="text-center">
-                                    <a href="/Cliente/Delete/@cliente.id"><button class="btn delete">DELETAR</button></a>
+                                    <button class="btn delete" onclick="Abrir(@cliente.id)">DELETAR</button>
                                 </td>
 
                             </tr>
@@ -50,6 +76,45 @@
             </div>
         </div>
 
+    </div>
+    <div class="modal" id="modal">
+        <div class="box">
+
+            @{
+                if (ViewBag.ConfirmDelete == null)
+                {
+                    <h1>Deseja mesmo deletar este cliente?</h1>
+                    <div class="buttons">
+                        <button class="btn close" onclick="Fechar()">FECHAR</button>
+                        <button class="btn search" onclick="Delete()">CONFIRMAR</button>
+                    </div>
+                }
+                else if (ViewBag.ConfirmDelete == 0)
+                {
+                    ViewBag.ConfirmDelete = null;
+
+                    <h1>Não foi possível deletar o cliente!</h1>
+                    <img src="https:///img.icons8.com/fluent/48/000000/error.png" />
+                    <div class="buttons">
+                        <button class="btn close" onclick="Fechar()">FECHAR</button>
+                    </div>
+
+                    <script>Abrir()</script>
+                }
+                else
+                {
+                    ViewBag.ConfirmDelete = null;
+
+                    <h1>Cliente deletetado com sucesso!</h1>
+                    <img src="https:///img.icons8.com/fluent/48/000000/verified-account.png" />
+                    <div class="buttons">
+                        <button class="btn close" onclick="Fechar()">FECHAR</button>
+                    </div>
+
+                    <script>Abrir()</script>
+                }
+            }
+        </div>
     </div>
 </body>
 </html>

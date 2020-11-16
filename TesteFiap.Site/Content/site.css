@@ -210,7 +210,7 @@ header .menu ul li:hover{
 
 .produtos > .itens > .item > img {
     max-width: 75%;
-    max-height: 40%;
+    height: 100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -238,3 +238,37 @@ footer{
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
 }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.modal div{
+    background-color: #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:30px;
+}
+
+.modal h1{
+     font-family: 'Roboto Condensed', sans-serif;
+}
+
+.modal img{
+    height:70px;
+    margin-bottom:20px;
+}
+

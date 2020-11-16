@@ -13,27 +13,20 @@ namespace TesteFiap.Site.Controllers
         [HttpPost]
         public ActionResult Cadastro(ClienteModel cliente)
         {
-            new ClienteDAO().Register(cliente);
-            return Redirect("/");
+            
+            ViewBag.ConfirmInserts = new ClienteDAO().Register(cliente);
+            return View("~/Views/Home/Index.cshtml");
         }
 
-       /* public ViewResult Delete(int id)
+       public ViewResult Delete(int id)
         {
 
-            new ClienteDAO().Delete(id);
+            ViewBag.ConfirmDelete =  new ClienteDAO().Delete(id);
             List<ClienteModel> clientes = new ClienteDAO().ListAll();
 
             return View("~/Views/Adm/Index.cshtml", clientes);
-        }*/
-
-        public ActionResult Delete(int id)
-        {
-
-            new ClienteDAO().Delete(id);
-            List<ClienteModel> clientes = new ClienteDAO().ListAll();
-
-            return Json(new { Tste = "" });
         }
+
 
         public ActionResult Search(String search) {
 
